@@ -1,0 +1,2 @@
+source /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader/gdbinit/symbols
+source /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader/gdbinit/connect
