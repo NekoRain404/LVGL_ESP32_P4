@@ -1,4 +1,4 @@
-Command: ninja all
+Command: cmake -G Ninja -B /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4
 fatal: detected dubious ownership in repository at '/opt/esp-idf'
 To add an exception for this directory, call:
 
@@ -19,42 +19,42 @@ Configuration Report
     Using sdkconfig default values                                              
     Config symbols with different default value between sdkconfig and           
     Kconfig                                                                     
+    LV_USE_SNAPSHOT: Kconfig default value: n, sdkconfig default value: y       
     LV_TXT_BREAK_CHARS: Kconfig default value:  ,.;:-_)}, sdkconfig             
     default value:  ,.;:-_                                                      
-    LV_USE_SNAPSHOT: Kconfig default value: n, sdkconfig default value: y       
    ──────────────────────────────────────────────────────────────────────────   
   Disabled Symbols/Choices With User-Set Value                                  
    ──────────────────────────────────────────────────────────────────────────   
     * ESPTOOLPY_FLASHFREQ_VAL (defined at                                       
     /opt/esp-idf/components/esptool_py/../spi_flash/esp32p4/Kconfig.flash_f…    
-    with user-set value 80 from /tmp/kconfgen_tmpoj0l0da6                       
+    with user-set value 80 from /tmp/kconfgen_tmpikaghcjw                       
     * ESPTOOLPY_FLASHFREQ (defined at                                           
     /opt/esp-idf/components/esptool_py/Kconfig.projbuild:93) with user-set      
-    value 80m from /tmp/kconfgen_tmpoj0l0da6                                    
+    value 80m from /tmp/kconfgen_tmpikaghcjw                                    
     * ESPTOOLPY_FLASHSIZE (defined at                                           
     /opt/esp-idf/components/esptool_py/Kconfig.projbuild:136) with user-set     
-    value 16MB from /tmp/kconfgen_tmpoj0l0da6                                   
+    value 16MB from /tmp/kconfgen_tmpikaghcjw                                   
     * PARTITION_TABLE_FILENAME (defined at                                      
     /opt/esp-idf/components/partition_table/Kconfig.projbuild:137) with         
-    user-set value partitions-16MiB.csv from /tmp/kconfgen_tmpoj0l0da6          
+    user-set value partitions-16MiB.csv from /tmp/kconfgen_tmpikaghcjw          
     * ESP32P4_REV_MIN_FULL (defined at                                          
     /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
-    with user-set value 100 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 100 from /tmp/kconfgen_tmpikaghcjw                      
     * ESP_REV_MIN_FULL (defined at                                              
     /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
-    with user-set value 100 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 100 from /tmp/kconfgen_tmpikaghcjw                      
     * ESP32P4_REV_MAX_FULL (defined at                                          
     /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
-    with user-set value 199 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 199 from /tmp/kconfgen_tmpikaghcjw                      
     * ESP_REV_MAX_FULL (defined at                                              
     /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
-    with user-set value 199 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 199 from /tmp/kconfgen_tmpikaghcjw                      
     * ESP_EFUSE_BLOCK_REV_MAX_FULL (defined at                                  
     /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
-    with user-set value 199 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 199 from /tmp/kconfgen_tmpikaghcjw                      
     * ESP_DEFAULT_CPU_FREQ_MHZ (defined at                                      
     /opt/esp-idf/components/esp_system/./port/soc/esp32p4/Kconfig.cpu:19)       
-    with user-set value 360 from /tmp/kconfgen_tmpoj0l0da6                      
+    with user-set value 360 from /tmp/kconfgen_tmpikaghcjw                      
    ──────────────────────────────────────────────────────────────────────────   
  ────────────────────────────────────────────────────────────────────────────── 
 fatal: detected dubious ownership in repository at '/opt/esp-idf'

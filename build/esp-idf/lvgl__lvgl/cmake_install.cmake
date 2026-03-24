@@ -1,4 +1,4 @@
-# Install script for directory: /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/managed_components/lvgl__lvgl
+# Install script for directory: /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,6 +40,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/esp-idf/lvgl__lvgl/install_local_manifest.txt"
+  file(WRITE "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/lvgl__lvgl/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

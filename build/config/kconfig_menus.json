@@ -36392,7 +36392,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": "Color depth to be used.",
-                                "id": "component-config-lvgl-configuration-color-settings-color-depth-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-16",
+                                "id": "component-config-lvgl-configuration-color-settings-color-depth-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-16",
                                 "name": "LV_COLOR_DEPTH",
                                 "title": "Color depth",
                                 "type": "choice"
@@ -36409,7 +36409,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-color-settings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-15",
+                        "id": "component-config-lvgl-configuration-color-settings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-15",
                         "title": "Color Settings",
                         "type": "menu"
                     },
@@ -36470,7 +36470,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": null,
-                                "id": "component-config-lvgl-configuration-memory-settings-malloc-functions-source-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-44",
+                                "id": "component-config-lvgl-configuration-memory-settings-malloc-functions-source-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-44",
                                 "name": null,
                                 "title": "Malloc functions source",
                                 "type": "choice"
@@ -36510,7 +36510,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": null,
-                                "id": "component-config-lvgl-configuration-memory-settings-string-functions-source-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-65",
+                                "id": "component-config-lvgl-configuration-memory-settings-string-functions-source-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-65",
                                 "name": null,
                                 "title": "String functions source",
                                 "type": "choice"
@@ -36550,7 +36550,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": null,
-                                "id": "component-config-lvgl-configuration-memory-settings-sprintf-functions-source-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-80",
+                                "id": "component-config-lvgl-configuration-memory-settings-sprintf-functions-source-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-80",
                                 "name": null,
                                 "title": "Sprintf functions source",
                                 "type": "choice"
@@ -36587,7 +36587,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-memory-settings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-43",
+                        "id": "component-config-lvgl-configuration-memory-settings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-43",
                         "title": "Memory Settings",
                         "type": "menu"
                     },
@@ -36615,7 +36615,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-hal-settings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-112",
+                        "id": "component-config-lvgl-configuration-hal-settings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-112",
                         "title": "HAL Settings",
                         "type": "menu"
                     },
@@ -36716,7 +36716,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": null,
-                                "id": "component-config-lvgl-configuration-operating-system-os--default-operating-system-to-use-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-128",
+                                "id": "component-config-lvgl-configuration-operating-system-os--default-operating-system-to-use-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-128",
                                 "name": "LV_USE_OS",
                                 "title": "Default operating system to use",
                                 "type": "choice"
@@ -36743,7 +36743,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-operating-system-os--home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-127",
+                        "id": "component-config-lvgl-configuration-operating-system-os--home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-127",
                         "title": "Operating System (OS)",
                         "type": "menu"
                     },
@@ -37079,7 +37079,7 @@
                                 ],
                                 "depends_on": "LV_USE_DRAW_SW",
                                 "help": "ASM mode to be used",
-                                "id": "component-config-lvgl-configuration-rendering-configuration-asm-mode-in-sw-draw-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-353",
+                                "id": "component-config-lvgl-configuration-rendering-configuration-asm-mode-in-sw-draw-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-353",
                                 "name": "LV_USE_DRAW_SW_ASM",
                                 "title": "Asm mode in sw draw",
                                 "type": "choice"
@@ -37517,7 +37517,7 @@
                                         ],
                                         "depends_on": "LV_USE_DRAW_NANOVG",
                                         "help": "Select which OpenGL implementation to use for NanoVG rendering.",
-                                        "id": "component-config-lvgl-configuration-rendering-configuration-use-nanovg-renderer--nanovg-opengl-backend-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-586",
+                                        "id": "component-config-lvgl-configuration-rendering-configuration-use-nanovg-renderer--nanovg-opengl-backend-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-586",
                                         "name": "LV_NANOVG_BACKEND",
                                         "title": "NanoVG OpenGL backend",
                                         "type": "choice"
@@ -37553,7 +37553,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-rendering-configuration-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-167",
+                        "id": "component-config-lvgl-configuration-rendering-configuration-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-167",
                         "title": "Rendering Configuration",
                         "type": "menu"
                     },
@@ -37628,7 +37628,7 @@
                                                 ],
                                                 "depends_on": null,
                                                 "help": "Specify how important log should be added.",
-                                                "id": "component-config-lvgl-configuration-feature-configuration-logging-enable-the-log-module-default-log-verbosity-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-620",
+                                                "id": "component-config-lvgl-configuration-feature-configuration-logging-enable-the-log-module-default-log-verbosity-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-620",
                                                 "name": null,
                                                 "title": "Default log verbosity",
                                                 "type": "choice"
@@ -37774,7 +37774,7 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-feature-configuration-logging-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-616",
+                                "id": "component-config-lvgl-configuration-feature-configuration-logging-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-616",
                                 "title": "Logging",
                                 "type": "menu"
                             },
@@ -37842,7 +37842,7 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-feature-configuration-asserts-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-711",
+                                "id": "component-config-lvgl-configuration-feature-configuration-asserts-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-711",
                                 "title": "Asserts",
                                 "type": "menu"
                             },
@@ -37880,7 +37880,7 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-feature-configuration-debug-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-736",
+                                "id": "component-config-lvgl-configuration-feature-configuration-debug-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-736",
                                 "title": "Debug",
                                 "type": "menu"
                             },
@@ -38114,13 +38114,13 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-feature-configuration-others-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-750",
+                                "id": "component-config-lvgl-configuration-feature-configuration-others-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-750",
                                 "title": "Others",
                                 "type": "menu"
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-feature-configuration-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-615",
+                        "id": "component-config-lvgl-configuration-feature-configuration-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-615",
                         "title": "Feature Configuration",
                         "type": "menu"
                     },
@@ -38188,7 +38188,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-compiler-settings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-902",
+                        "id": "component-config-lvgl-configuration-compiler-settings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-902",
                         "title": "Compiler Settings",
                         "type": "menu"
                     },
@@ -38468,7 +38468,7 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-font-usage-enable-built-in-fonts-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-930",
+                                "id": "component-config-lvgl-configuration-font-usage-enable-built-in-fonts-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-930",
                                 "title": "Enable built-in fonts",
                                 "type": "menu"
                             },
@@ -38747,7 +38747,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": "Select theme default title font",
-                                "id": "component-config-lvgl-configuration-font-usage-select-theme-default-title-font-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-991",
+                                "id": "component-config-lvgl-configuration-font-usage-select-theme-default-title-font-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-991",
                                 "name": "LV_FONT_DEFAULT",
                                 "title": "Select theme default title font",
                                 "type": "choice"
@@ -38796,13 +38796,13 @@
                                     }
                                 ],
                                 "depends_on": null,
-                                "id": "component-config-lvgl-configuration-font-usage-enable-static-fonts-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1095",
+                                "id": "component-config-lvgl-configuration-font-usage-enable-static-fonts-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1095",
                                 "title": "Enable static fonts",
                                 "type": "menu"
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-font-usage-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-929",
+                        "id": "component-config-lvgl-configuration-font-usage-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-929",
                         "title": "Font Usage",
                         "type": "menu"
                     },
@@ -38833,7 +38833,7 @@
                                 ],
                                 "depends_on": null,
                                 "help": "Select a character encoding for strings. Your IDE or editor should have the same character encoding.",
-                                "id": "component-config-lvgl-configuration-text-settings-select-a-character-encoding-for-strings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1104",
+                                "id": "component-config-lvgl-configuration-text-settings-select-a-character-encoding-for-strings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1104",
                                 "name": "LV_TXT_ENC",
                                 "title": "Select a character encoding for strings",
                                 "type": "choice"
@@ -38925,7 +38925,7 @@
                                         ],
                                         "depends_on": "LV_USE_BIDI",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-text-settings-support-bidirectional-texts-set-the-default-bidi-direction-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1153",
+                                        "id": "component-config-lvgl-configuration-text-settings-support-bidirectional-texts-set-the-default-bidi-direction-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1153",
                                         "name": null,
                                         "title": "Set the default BIDI direction",
                                         "type": "choice"
@@ -38951,7 +38951,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-text-settings-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1103",
+                        "id": "component-config-lvgl-configuration-text-settings-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1103",
                         "title": "Text Settings",
                         "type": "menu"
                     },
@@ -39113,7 +39113,7 @@
                                             }
                                         ],
                                         "depends_on": "LV_USE_CALENDAR",
-                                        "id": "component-config-lvgl-configuration-widget-usage-calendar-days-name-configuration-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1202",
+                                        "id": "component-config-lvgl-configuration-widget-usage-calendar-days-name-configuration-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1202",
                                         "title": "Days name configuration",
                                         "type": "menu"
                                     },
@@ -39492,7 +39492,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-widget-usage-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1173",
+                        "id": "component-config-lvgl-configuration-widget-usage-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1173",
                         "title": "Widget Usage",
                         "type": "menu"
                     },
@@ -39561,7 +39561,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-themes-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1355",
+                        "id": "component-config-lvgl-configuration-themes-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1355",
                         "title": "Themes",
                         "type": "menu"
                     },
@@ -39589,7 +39589,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-layouts-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1378",
+                        "id": "component-config-lvgl-configuration-layouts-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1378",
                         "title": "Layouts",
                         "type": "menu"
                     },
@@ -40176,7 +40176,7 @@
                                         ],
                                         "depends_on": "LV_USE_THORVG",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-3rd-party-libraries-thorvg-library-use-thorvg-config-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1580",
+                                        "id": "component-config-lvgl-configuration-3rd-party-libraries-thorvg-library-use-thorvg-config-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1580",
                                         "name": null,
                                         "title": "Use ThorVG config",
                                         "type": "choice"
@@ -40227,7 +40227,7 @@
                                         ],
                                         "depends_on": "LV_USE_LZ4",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-3rd-party-libraries-enable-lz4-compress-decompress-lib-choose-lvgl-built-in-lz4-lib-or-external-lib-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1596",
+                                        "id": "component-config-lvgl-configuration-3rd-party-libraries-enable-lz4-compress-decompress-lib-choose-lvgl-built-in-lz4-lib-or-external-lib-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1596",
                                         "name": null,
                                         "title": "Choose lvgl built-in LZ4 lib or external lib",
                                         "type": "choice"
@@ -40274,7 +40274,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-3rd-party-libraries-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1387",
+                        "id": "component-config-lvgl-configuration-3rd-party-libraries-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1387",
                         "title": "3rd Party Libraries",
                         "type": "menu"
                     },
@@ -40389,7 +40389,7 @@
                                                 ],
                                                 "depends_on": "LV_USE_PERF_MONITOR",
                                                 "help": null,
-                                                "id": "component-config-lvgl-configuration-others-enable-system-monitor-component-show-cpu-usage-and-fps-count-performance-monitor-position-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1634",
+                                                "id": "component-config-lvgl-configuration-others-enable-system-monitor-component-show-cpu-usage-and-fps-count-performance-monitor-position-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1634",
                                                 "name": null,
                                                 "title": "Performance monitor position",
                                                 "type": "choice"
@@ -40510,7 +40510,7 @@
                                                 ],
                                                 "depends_on": "LV_USE_MEM_MONITOR",
                                                 "help": null,
-                                                "id": "component-config-lvgl-configuration-others-enable-system-monitor-component-show-the-used-memory-and-the-memory-fragmentation-memory-monitor-position-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1669",
+                                                "id": "component-config-lvgl-configuration-others-enable-system-monitor-component-show-the-used-memory-and-the-memory-fragmentation-memory-monitor-position-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1669",
                                                 "name": null,
                                                 "title": "Memory monitor position",
                                                 "type": "choice"
@@ -40933,7 +40933,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-others-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1621",
+                        "id": "component-config-lvgl-configuration-others-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1621",
                         "title": "Others",
                         "type": "menu"
                     },
@@ -40986,7 +40986,7 @@
                                         ],
                                         "depends_on": "LV_USE_SDL",
                                         "help": "LV_DISPLAY_RENDER_MODE_DIRECT is recommended for best performance",
-                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-rendering-mode-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1860",
+                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-rendering-mode-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1860",
                                         "name": null,
                                         "title": "SDL rendering mode",
                                         "type": "choice"
@@ -41026,7 +41026,7 @@
                                         ],
                                         "depends_on": "LV_USE_SDL",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-buffer-size-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1877",
+                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-buffer-size-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1877",
                                         "name": null,
                                         "title": "SDL buffer size",
                                         "type": "choice"
@@ -41096,7 +41096,7 @@
                                         ],
                                         "depends_on": "LV_USE_SDL",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-mousewheel-mode-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1916",
+                                        "id": "component-config-lvgl-configuration-devices-use-sdl-to-open-window-on-pc-and-handle-mouse-and-keyboard-sdl-mousewheel-mode-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1916",
                                         "name": null,
                                         "title": "SDL mousewheel mode",
                                         "type": "choice"
@@ -41177,7 +41177,7 @@
                                         ],
                                         "depends_on": "LV_USE_X11",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-devices-use-x11-window-manager-to-open-window-on-linux-pc-and-handle-mouse-and-keyboard-x11-device-render-mode-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1945",
+                                        "id": "component-config-lvgl-configuration-devices-use-x11-window-manager-to-open-window-on-linux-pc-and-handle-mouse-and-keyboard-x11-device-render-mode-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1945",
                                         "name": null,
                                         "title": "X11 device render mode",
                                         "type": "choice"
@@ -41259,7 +41259,7 @@
                                         ],
                                         "depends_on": "LV_USE_LINUX_FBDEV",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-devices-use-linux-framebuffer-device-framebuffer-device-render-mode-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1984",
+                                        "id": "component-config-lvgl-configuration-devices-use-linux-framebuffer-device-framebuffer-device-render-mode-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1984",
                                         "name": null,
                                         "title": "Framebuffer device render mode",
                                         "type": "choice"
@@ -41299,7 +41299,7 @@
                                         ],
                                         "depends_on": "LV_USE_LINUX_FBDEV",
                                         "help": null,
-                                        "id": "component-config-lvgl-configuration-devices-use-linux-framebuffer-device-framebuffer-size-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-2006",
+                                        "id": "component-config-lvgl-configuration-devices-use-linux-framebuffer-device-framebuffer-size-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-2006",
                                         "name": null,
                                         "title": "Framebuffer size",
                                         "type": "choice"
@@ -41423,7 +41423,7 @@
                                                 ],
                                                 "depends_on": "LV_USE_NUTTX_LCD",
                                                 "help": null,
-                                                "id": "component-config-lvgl-configuration-devices-use-nuttx-to-open-window-and-handle-touchscreen-use-nuttx-lcd-device-nuttx-lcd-buffer-size-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-2070",
+                                                "id": "component-config-lvgl-configuration-devices-use-nuttx-to-open-window-and-handle-touchscreen-use-nuttx-lcd-device-nuttx-lcd-buffer-size-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-2070",
                                                 "name": null,
                                                 "title": "NuttX LCD buffer size",
                                                 "type": "choice"
@@ -41797,7 +41797,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-devices-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-1851",
+                        "id": "component-config-lvgl-configuration-devices-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-1851",
                         "title": "Devices",
                         "type": "menu"
                     },
@@ -41815,7 +41815,7 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-examples-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-2252",
+                        "id": "component-config-lvgl-configuration-examples-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-2252",
                         "title": "Examples",
                         "type": "menu"
                     },
@@ -42015,13 +42015,13 @@
                             }
                         ],
                         "depends_on": null,
-                        "id": "component-config-lvgl-configuration-demos-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-2258",
+                        "id": "component-config-lvgl-configuration-demos-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-2258",
                         "title": "Demos",
                         "type": "menu"
                     }
                 ],
                 "depends_on": null,
-                "id": "component-config-lvgl-configuration-home-nekorain-Documents-IDF-LVGL-LVGL_MIPILCD-01_lvgl_official_transplant-managed_components-lvgl__lvgl-Kconfig-3",
+                "id": "component-config-lvgl-configuration-home-nekorain-Documents-GIT_WORK-NekoRain-LVGL_ESP32_P4-managed_components-lvgl__lvgl-Kconfig-3",
                 "title": "LVGL configuration",
                 "type": "menu"
             },

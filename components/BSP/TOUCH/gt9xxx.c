@@ -162,69 +162,56 @@ uint8_t gt9xxx_scan(uint8_t mode)
     uint8_t res = 0;
     uint16_t temp;
     uint16_t tempsta;
-    static uint8_t t = 0;           /* 控制查询间隔,从而降低CPU占用率 */
-    t++;
+    gt9xxx_rd_reg(GT9XXX_GSTID_REG, &mode, 1);              /* 读取触摸点的状态 */
 
-    if ((t % 10) == 0 || t < 10)    /* 空闲时,每进入10次CTP_Scan函数才检测1次,从而节省CPU使用率 */
+    if ((mode & 0X80) && ((mode & 0XF) <= g_gt_tnum))
     {
-        gt9xxx_rd_reg(GT9XXX_GSTID_REG, &mode, 1);              /* 读取触摸点的状态 */
+        i = 0;
+        gt9xxx_wr_reg(GT9XXX_GSTID_REG, &i, 1);             /* 清标志 */
+    }
 
-        if ((mode & 0X80) && ((mode & 0XF) <= g_gt_tnum))
+    if ((mode & 0XF) && ((mode & 0XF) <= g_gt_tnum))
+    {
+        temp = 0XFFFF << (mode & 0XF);                      /* 将点的个数转换为1的位数,匹配tp_dev.sta定义 */
+        tempsta = tp_dev.sta;                               /* 保存当前的tp_dev.sta值 */
+        tp_dev.sta = (~temp) | TP_PRES_DOWN | TP_CATH_PRES;
+        tp_dev.x[g_gt_tnum - 1] = tp_dev.x[0];              /* 保存触点0的数据,保存在最后一个上 */
+        tp_dev.y[g_gt_tnum - 1] = tp_dev.y[0];
+
+        for (i = 0; i < g_gt_tnum; i++)
         {
-            i = 0;
-            gt9xxx_wr_reg(GT9XXX_GSTID_REG, &i, 1);             /* 清标志 */
+            if (tp_dev.sta & (1 << i))                      /* 触摸有效? */
+            {
+                gt9xxx_rd_reg(GT9XXX_TPX_TBL[i], buf, 4);   /* 读取XY坐标值 */
+
+                if (lcddev.id == 0x9881d || lcddev.id == 0x7703 || lcddev.id == 0x9881c8 || lcddev.id == 0x79007 || lcddev.id == 0x9881c10 || lcddev.id == 0x7796)
+                {
+                    tp_dev.x[i] = ((uint16_t)buf[1] << 8) + buf[0];
+                    tp_dev.y[i] = ((uint16_t)buf[3] << 8) + buf[2];
+                }
+                else
+                {
+                    tp_dev.x[i] = lcddev.width - (((uint16_t)buf[1] << 8) + buf[0]);
+                    tp_dev.y[i] = lcddev.height - (((uint16_t)buf[3] << 8) + buf[2]);
+                }
+            }
         }
 
-        if ((mode & 0XF) && ((mode & 0XF) <= g_gt_tnum))
+        res = 1;
+
+        if (tp_dev.x[0] > lcddev.width || tp_dev.y[0] > lcddev.height)      /* 非法数据(坐标超出了) */
         {
-            temp = 0XFFFF << (mode & 0XF);                      /* 将点的个数转换为1的位数,匹配tp_dev.sta定义 */
-            tempsta = tp_dev.sta;                               /* 保存当前的tp_dev.sta值 */
-            tp_dev.sta = (~temp) | TP_PRES_DOWN | TP_CATH_PRES;
-            tp_dev.x[g_gt_tnum - 1] = tp_dev.x[0];              /* 保存触点0的数据,保存在最后一个上 */
-            tp_dev.y[g_gt_tnum - 1] = tp_dev.y[0];
-
-            for (i = 0; i < g_gt_tnum; i++)
+            if ((mode & 0XF) > 1)                   /* 有其他点有数据,则复第二个触点的数据到第一个触点. */
             {
-                if (tp_dev.sta & (1 << i))                      /* 触摸有效? */
-                {
-                    gt9xxx_rd_reg(GT9XXX_TPX_TBL[i], buf, 4);   /* 读取XY坐标值 */
-
-					if (lcddev.id == 0x9881d || lcddev.id == 0x7703 || lcddev.id == 0x9881c8 || lcddev.id == 0x79007 ||lcddev.id == 0x9881c10 || lcddev.id == 0x7796)         /* 5/5.5/7/8寸MIPI屏触摸屏 */
-					{
-						tp_dev.x[i] = ((uint16_t)buf[1] << 8) + buf[0];
-						tp_dev.y[i] = ((uint16_t)buf[3] << 8) + buf[2];
-					}
-					else
-					{
-						tp_dev.x[i] = lcddev.width - (((uint16_t)buf[1] << 8) + buf[0]);
-						tp_dev.y[i] = lcddev.height - (((uint16_t)buf[3] << 8) + buf[2]);
-					}
-                }
-
-                // ESP_LOGI("GT9XXX", "x[%d]:%d,y[%d]:%d\r\n", i, tp_dev.x[i], i, tp_dev.y[i]);
+                tp_dev.x[0] = tp_dev.x[1];
+                tp_dev.y[0] = tp_dev.y[1];
             }
-
-            res = 1;
-
-            if (tp_dev.x[0] > lcddev.width || tp_dev.y[0] > lcddev.height)      /* 非法数据(坐标超出了) */
+            else                                    /* 非法数据,则忽略此次数据(还原原来的) */
             {
-                if ((mode & 0XF) > 1)                   /* 有其他点有数据,则复第二个触点的数据到第一个触点. */
-                {
-                    tp_dev.x[0] = tp_dev.x[1];
-                    tp_dev.y[0] = tp_dev.y[1];
-                    t = 0;                              /* 触发一次,则会最少连续监测10次,从而提高命中率 */
-                }
-                else                                    /* 非法数据,则忽略此次数据(还原原来的) */
-                {
-                    tp_dev.x[0] = tp_dev.x[g_gt_tnum - 1];
-                    tp_dev.y[0] = tp_dev.y[g_gt_tnum - 1];
-                    mode = 0X80;
-                    tp_dev.sta = tempsta;               /* 恢复tp_dev.sta */
-                }
-            }
-            else 
-            {
-                t = 0;                                  /* 触发一次,则会最少连续监测10次,从而提高命中率 */
+                tp_dev.x[0] = tp_dev.x[g_gt_tnum - 1];
+                tp_dev.y[0] = tp_dev.y[g_gt_tnum - 1];
+                mode = 0X80;
+                tp_dev.sta = tempsta;               /* 恢复tp_dev.sta */
             }
         }
     }
@@ -241,11 +228,6 @@ uint8_t gt9xxx_scan(uint8_t mode)
             tp_dev.y[0] = 0xffff;
             tp_dev.sta &= 0XE000;           /* 清除点有效标记 */
         }
-    }
-
-    if (t > 240)
-    {
-        t = 10;                             /* 重新从10开始计数 */
     }
 
     return res;

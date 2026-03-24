@@ -336,6 +336,17 @@ static lv_display_t *lvgl_port_add_disp_priv(const lvgl_port_display_cfg_t *disp
         trans_sem = xSemaphoreCreateCounting(1, 0); /* 创建计数信号量 */
         ESP_GOTO_ON_FALSE(trans_sem, ESP_ERR_NO_MEM, err, TAG, "Failed to create transport counting Semaphore"); /* 信号量创建失败则跳转到错误处理 */
         disp_ctx->trans_sem = trans_sem;            /* 设置传输信号量 */
+
+        if (disp_cfg->flags.triple_buffer)
+        {
+            uint32_t buf3_caps = disp_cfg->flags.buff_spiram ? MALLOC_CAP_SPIRAM : MALLOC_CAP_DEFAULT;
+            if (disp_cfg->flags.buff_dma) {
+                buf3_caps = MALLOC_CAP_DMA;
+            }
+            buf3 = heap_caps_aligned_alloc(CONFIG_LV_DRAW_BUF_ALIGN, buffer_size * sizeof(lv_color_t), buf3_caps);
+            ESP_GOTO_ON_FALSE(buf3, ESP_ERR_NO_MEM, err, TAG, "Not enough memory for LVGL buffer (buf3) allocation!");
+            disp_ctx->buf3 = buf3;
+        }
     }
     else
     {
@@ -552,6 +563,9 @@ IRAM_ATTR static bool lvgl_port_flush_dpi_vsync_ready_callback(esp_lcd_panel_han
     /* 断言确保显示上下文不为空 */
     assert(disp_ctx != NULL);
 
+    /* DSI avoid_tearing/full/direct 路径由 VSYNC 事件通知 flush 完成 */
+    lv_display_flush_ready(disp);
+
     /* 如果传输信号量存在，则释放信号量以通知等待的线程VSYNC事件已发生 */
     if (disp_ctx->trans_sem)
     {
@@ -676,19 +690,23 @@ static void lvgl_port_flush_callback(lv_display_t *disp, const lv_area_t *area, 
         if ((disp_ctx->disp_type == LVGL_PORT_DISP_TYPE_RGB || disp_ctx->disp_type == LVGL_PORT_DISP_TYPE_DSI) &&
             (render_mode == LV_DISPLAY_RENDER_MODE_DIRECT || render_mode == LV_DISPLAY_RENDER_MODE_FULL))
         {
-            /* 如果是最后一个绘制区域，则进行绘制 */
-            if (lv_display_flush_is_last(disp))
+            if (!lv_display_flush_is_last(disp))
             {
-                if (swap_bytes) {
-                    lv_draw_sw_rgb565_swap(px_map, width * height);
-                }
-                /* 如果接口是I80或SPI，此步骤不能用于绘图 */
-                esp_lcd_panel_draw_bitmap(disp_ctx->panel_handle, x_start, y_start, x_end + 1, y_end + 1, px_map);
-                /* RGB直刷需要等待VSYNC；DSI在回调里通知flush ready */
-                if (disp_ctx->disp_type == LVGL_PORT_DISP_TYPE_RGB && disp_ctx->trans_sem) {
-                    xSemaphoreTake(disp_ctx->trans_sem, 0);
-                    xSemaphoreTake(disp_ctx->trans_sem, portMAX_DELAY);
-                }
+                /* direct/full 模式下只有最后一个区域才真正提交，前面的区域必须立即释放 */
+                lv_display_flush_ready(disp);
+                return;
+            }
+
+            /* 如果是最后一个绘制区域，则进行绘制 */
+            if (swap_bytes) {
+                lv_draw_sw_rgb565_swap(px_map, width * height);
+            }
+            /* 如果接口是I80或SPI，此步骤不能用于绘图 */
+            esp_lcd_panel_draw_bitmap(disp_ctx->panel_handle, x_start, y_start, x_end + 1, y_end + 1, px_map);
+            /* RGB直刷需要等待VSYNC；DSI在回调里通知flush ready */
+            if (disp_ctx->disp_type == LVGL_PORT_DISP_TYPE_RGB && disp_ctx->trans_sem) {
+                xSemaphoreTake(disp_ctx->trans_sem, 0);
+                xSemaphoreTake(disp_ctx->trans_sem, portMAX_DELAY);
             }
         }
         else
@@ -756,6 +774,12 @@ static void lvgl_port_update_callback(lv_display_t *disp)
     lvgl_port_display_ctx_t *disp_ctx = lvgl_port_get_display_ctx(disp);
     assert(disp_ctx != NULL);
     if (disp_ctx->sw_rotate)
+    {
+        return;
+    }
+
+    /* 这块 MIPI 面板不支持 swap_xy/mirror，且当前路径不需要硬件旋转控制 */
+    if (disp_ctx->io_handle != NULL && disp_ctx->control_handle == NULL)
     {
         return;
     }

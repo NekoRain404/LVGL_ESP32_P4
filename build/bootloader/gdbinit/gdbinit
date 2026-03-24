@@ -1,2 +1,2 @@
-source /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader/gdbinit/symbols
-source /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader/gdbinit/connect
+source /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/gdbinit/symbols
+source /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/gdbinit/connect

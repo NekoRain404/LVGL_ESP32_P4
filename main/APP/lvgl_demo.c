@@ -19,6 +19,67 @@
 #include "esp_lvgl_port.h"
 #include "esp_lvgl_port_disp.h"
 
+typedef struct {
+    uint16_t x;
+    uint16_t y;
+    lv_indev_state_t state;
+} lvgl_touch_cache_t;
+
+static lvgl_touch_cache_t s_touch_cache = {
+    .x = 0,
+    .y = 0,
+    .state = LV_INDEV_STATE_RELEASED,
+};
+
+static portMUX_TYPE s_touch_mux = portMUX_INITIALIZER_UNLOCKED;
+static TaskHandle_t s_touch_task_handle = NULL;
+
+static void IRAM_ATTR touchpad_isr_handler(void *arg)
+{
+    BaseType_t need_yield = pdFALSE;
+
+    if (s_touch_task_handle != NULL) {
+        vTaskNotifyGiveFromISR(s_touch_task_handle, &need_yield);
+    }
+
+    if (need_yield == pdTRUE) {
+        portYIELD_FROM_ISR();
+    }
+}
+
+static void touchpad_poll_task(void *arg)
+{
+    (void)arg;
+
+    while (1) {
+        lvgl_touch_cache_t next = {
+            .x = 0,
+            .y = 0,
+            .state = LV_INDEV_STATE_RELEASED,
+        };
+        uint32_t wait_ms;
+
+        portENTER_CRITICAL(&s_touch_mux);
+        wait_ms = (s_touch_cache.state == LV_INDEV_STATE_PRESSED) ? 4 : 8;
+        portEXIT_CRITICAL(&s_touch_mux);
+
+        ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(wait_ms) > 0 ? pdMS_TO_TICKS(wait_ms) : 1);
+
+        tp_dev.scan(0);
+        if (tp_dev.sta & TP_PRES_DOWN) {
+            next.x = tp_dev.x[0];
+            next.y = tp_dev.y[0];
+            next.state = LV_INDEV_STATE_PRESSED;
+        }
+
+        portENTER_CRITICAL(&s_touch_mux);
+        s_touch_cache = next;
+        portEXIT_CRITICAL(&s_touch_mux);
+
+        lvgl_port_task_wake(LVGL_PORT_EVENT_TOUCH, NULL);
+    }
+}
+
 
 /**
  * @brief       初始化并注册显示设备
@@ -76,13 +137,13 @@ lv_display_t *lv_port_disp_init(void)
             .io_handle = lcddev.lcd_dbi_io,         /* 设置io_handle为lcddev.lcd_dbi_io，用于处理显示设备的IO操作 */
             .panel_handle = lcddev.lcd_panel_handle,/* 设置panel_handle为lcddev.lcd_panel_handle，用于处理显示设备的面板操作 */
             .control_handle = NULL,
-            .buffer_size = lcddev.width * 200,
+            .buffer_size = lcddev.width * lcddev.height,
             .double_buffer = true,
             .trans_size = 0,
             .hres = lcddev.width,
             .vres = lcddev.height,
             .monochrome = false,                    /* 设置monochrome为false，用于设置显示设备是否为单色 */
-            .rotation = {                           /* 旋转值必须与esp_lcd中用于屏幕初始设置的值相同 */
+            .rotation = {                           /* MIPI路径不使用硬件mirror/swap_xy，保持默认值即可 */
                 .swap_xy = false,
                 .mirror_x = false,
                 .mirror_y = false,
@@ -103,13 +164,13 @@ lv_display_t *lv_port_disp_init(void)
                 .triple_buffer = false,
                 .sw_rotate = false,
                 .full_refresh = false,
-                .direct_mode = false,
+                .direct_mode = true,
             }
         };
 
         const lvgl_port_display_dsi_cfg_t  dpi_cfg = {
             .flags = {
-                .avoid_tearing = false,
+                .avoid_tearing = true,
             }
         };
 
@@ -128,19 +189,15 @@ lv_display_t *lv_port_disp_init(void)
 void touchpad_read(lv_indev_t *indev, lv_indev_data_t *data)
 {
     assert(indev); /* 确保输入设备有效 */
-    /* 从触摸控制器读取数据到内存 */
-    tp_dev.scan(0); /* 扫描触摸数据 */
+    lvgl_touch_cache_t cache;
 
-    if (tp_dev.sta & TP_PRES_DOWN) /* 检查触摸是否按下 */
-    {
-        data->point.x = tp_dev.x[0];
-        data->point.y = tp_dev.y[0];
-        data->state = LV_INDEV_STATE_PRESSED; /* 设置状态为按下 */
-    }
-    else
-    {
-        data->state = LV_INDEV_STATE_RELEASED; /* 设置状态为释放 */
-    }
+    portENTER_CRITICAL(&s_touch_mux);
+    cache = s_touch_cache;
+    portEXIT_CRITICAL(&s_touch_mux);
+
+    data->point.x = cache.x;
+    data->point.y = cache.y;
+    data->state = cache.state;
 }
 
 /**
@@ -161,6 +218,12 @@ lv_indev_t *lv_port_indev_init(lv_display_t *disp)
     if (disp != NULL) {
         lv_indev_set_display(indev, disp);
     }
+
+    xTaskCreatePinnedToCore(touchpad_poll_task, "touchPoll", 4096, NULL, 6, &s_touch_task_handle, 0);
+    gpio_set_intr_type(GT9XXX_INT_GPIO_PIN, GPIO_INTR_ANYEDGE);
+    esp_err_t isr_ret = gpio_install_isr_service(0);
+    assert(isr_ret == ESP_OK || isr_ret == ESP_ERR_INVALID_STATE);
+    gpio_isr_handler_add(GT9XXX_INT_GPIO_PIN, touchpad_isr_handler, NULL);
 
     return indev;
 }

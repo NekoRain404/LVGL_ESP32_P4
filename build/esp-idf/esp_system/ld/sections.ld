@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/esp-idf/esp_system/ld/sections.ld.in */
+/* Generated from: /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/esp_system/ld/sections.ld.in */
 
 /*
  * SPDX-FileCopyrightText: 2022 Espressif Systems (Shanghai) CO LTD

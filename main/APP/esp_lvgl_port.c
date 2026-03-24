@@ -207,8 +207,16 @@ void lvgl_port_unlock(void)
  */
 esp_err_t lvgl_port_task_wake(lvgl_port_event_type_t event, void *param)
 {
-    ESP_LOGE(TAG, "Task wake is not supported, when used LVGL8!");
-    return ESP_ERR_NOT_SUPPORTED;
+    (void)event;
+    (void)param;
+
+    if (lvgl_port_ctx.lvgl_task == NULL)
+    {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    lvgl_port_task_notify(0);
+    return ESP_OK;
 }
 
 /**
@@ -274,7 +282,7 @@ static void lvgl_port_task(void *arg)
         {
             task_delay_ms = 5;
         }
-        vTaskDelay(pdMS_TO_TICKS(task_delay_ms));
+        xTaskNotifyWait(0, ULONG_MAX, NULL, pdMS_TO_TICKS(task_delay_ms));
     }
 
     /* 释放任务互斥锁 */

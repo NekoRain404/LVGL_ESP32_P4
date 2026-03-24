@@ -1,4 +1,4 @@
-/* * Data converted from /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

@@ -10,18 +10,18 @@ if(NOT EXISTS "/opt/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/opt/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader"
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix"
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/tmp"
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src"
-  "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/tmp"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src"
+  "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

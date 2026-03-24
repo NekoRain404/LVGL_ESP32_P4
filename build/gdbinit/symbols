@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader/bootloader.elf
+    add-symbol-file /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file /home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/01_lvgl_official_transplant.elf
+file /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf

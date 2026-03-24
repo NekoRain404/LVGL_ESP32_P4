@@ -1,0 +1,60 @@
+Command: ninja all
+[1/11] Building C object esp-idf/BSP/CMakeFiles/__idf_BSP.dir/TOUCH/gt9xxx.c.obj
+FAILED: [code=1] esp-idf/BSP/CMakeFiles/__idf_BSP.dir/TOUCH/gt9xxx.c.obj 
+/home/nekorain/.espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -DESP_PLATFORM -DIDF_VER=\"HEAD-HASH-NOTFOUND\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/config -I/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/LED -I/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/LCD -I/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/MYIIC -I/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH -I/opt/esp-idf/components/esp_libc/platform_include -I/opt/esp-idf/components/freertos/config/include -I/opt/esp-idf/components/freertos/config/include/freertos -I/opt/esp-idf/components/freertos/config/riscv/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include -I/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos -I/opt/esp-idf/components/freertos/esp_additions/include -I/opt/esp-idf/components/esp_hw_support/include -I/opt/esp-idf/components/esp_hw_support/include/soc -I/opt/esp-idf/components/esp_hw_support/ldo/include -I/opt/esp-idf/components/esp_hw_support/debug_probe/include -I/opt/esp-idf/components/esp_hw_support/etm/include -I/opt/esp-idf/components/esp_hw_support/mspi_timing_tuning/include -I/opt/esp-idf/components/esp_hw_support/mspi_timing_tuning/tuning_scheme_impl/include -I/opt/esp-idf/components/esp_hw_support/power_supply/include -I/opt/esp-idf/components/esp_hw_support/modem/include -I/opt/esp-idf/components/esp_hw_support/port/esp32p4/. -I/opt/esp-idf/components/esp_hw_support/port/esp32p4/include -I/opt/esp-idf/components/esp_hw_support/port/esp32p4/private_include -I/opt/esp-idf/components/esp_hw_support/mspi_timing_tuning/port/esp32p4/. -I/opt/esp-idf/components/heap/include -I/opt/esp-idf/components/heap/tlsf -I/opt/esp-idf/components/log/include -I/opt/esp-idf/components/soc/include -I/opt/esp-idf/components/soc/esp32p4 -I/opt/esp-idf/components/soc/esp32p4/include -I/opt/esp-idf/components/soc/esp32p4/register/hw_ver1 -I/opt/esp-idf/components/hal/platform_port/include -I/opt/esp-idf/components/hal/esp32p4/include -I/opt/esp-idf/components/hal/include -I/opt/esp-idf/components/esp_rom/include -I/opt/esp-idf/components/esp_rom/esp32p4/include -I/opt/esp-idf/components/esp_rom/esp32p4/include/esp32p4 -I/opt/esp-idf/components/esp_rom/esp32p4 -I/opt/esp-idf/components/esp_common/include -I/opt/esp-idf/components/esp_system/include -I/opt/esp-idf/components/esp_system/port/soc -I/opt/esp-idf/components/esp_system/port/include/riscv -I/opt/esp-idf/components/esp_system/port/include/private -I/opt/esp-idf/components/esp_stdio/include -I/opt/esp-idf/components/riscv/include -I/opt/esp-idf/components/esp_hal_gpio/include -I/opt/esp-idf/components/esp_hal_gpio/esp32p4/include -I/opt/esp-idf/components/esp_hal_usb/include -I/opt/esp-idf/components/esp_hal_usb/esp32p4/include -I/opt/esp-idf/components/esp_hal_pmu/include -I/opt/esp-idf/components/esp_hal_pmu/esp32p4/include -I/opt/esp-idf/components/esp_hal_ana_conv/include -I/opt/esp-idf/components/esp_hal_ana_conv/esp32p4/include -I/opt/esp-idf/components/esp_hal_dma/include -I/opt/esp-idf/components/esp_hal_dma/esp32p4/include -I/opt/esp-idf/components/lwip/include -I/opt/esp-idf/components/lwip/include/apps -I/opt/esp-idf/components/lwip/lwip/src/include -I/opt/esp-idf/components/lwip/port/include -I/opt/esp-idf/components/lwip/port/freertos/include -I/opt/esp-idf/components/lwip/port/esp32xx/include -I/opt/esp-idf/components/lwip/port/esp32xx/include/arch -I/opt/esp-idf/components/lwip/port/esp32xx/include/sys -I/opt/esp-idf/components/driver/i2c/include -I/opt/esp-idf/components/driver/touch_sensor/include -I/opt/esp-idf/components/driver/twai/include -I/opt/esp-idf/components/esp_hal_i2c/esp32p4/include -I/opt/esp-idf/components/esp_hal_i2c/include -I/opt/esp-idf/components/esp_hal_twai/include -I/opt/esp-idf/components/esp_hal_twai/esp32p4/include -I/opt/esp-idf/components/esp_hal_touch_sens/esp32p4/include -I/opt/esp-idf/components/esp_hal_touch_sens/include -I/opt/esp-idf/components/esp_lcd/include -I/opt/esp-idf/components/esp_lcd/interface -I/opt/esp-idf/components/esp_lcd/rgb/include -I/opt/esp-idf/components/esp_lcd/dsi/include -I/opt/esp-idf/components/esp_driver_gpio/include -I/opt/esp-idf/components/esp_driver_i2c/include -I/opt/esp-idf/components/esp_driver_spi/include -I/opt/esp-idf/components/esp_pm/include -I/opt/esp-idf/components/esp_hal_gpspi/include -I/opt/esp-idf/components/esp_hal_gpspi/esp32p4/include -I/opt/esp-idf/components/esp_driver_dma/include -I/opt/esp-idf/components/esp_driver_parlio/include -I/opt/esp-idf/components/esp_hal_parlio/include -I/opt/esp-idf/components/esp_hal_parlio/esp32p4/include -I/opt/esp-idf/components/esp_hal_lcd/include -I/opt/esp-idf/components/esp_hal_lcd/esp32p4/include @"/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/toolchain/cflags" -fdiagnostics-color=always -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4=. -fmacro-prefix-map=/opt/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -ffast-math -O3 -Wno-error=format=-Wno-format -MD -MT esp-idf/BSP/CMakeFiles/__idf_BSP.dir/TOUCH/gt9xxx.c.obj -MF esp-idf/BSP/CMakeFiles/__idf_BSP.dir/TOUCH/gt9xxx.c.obj.d -o esp-idf/BSP/CMakeFiles/__idf_BSP.dir/TOUCH/gt9xxx.c.obj -c /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.c
+In file included from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.h:21,
+                 from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.c:15:
+/opt/esp-idf/components/driver/i2c/include/driver/i2c.h:13:9: note: '#pragma message: 
+================================ CRITICAL WARNING ================================
+This legacy I2C driver (driver/i2c.h) is officially END-OF-LIFE (EOL) as of ESP-IDF v6.0.
+
+1. NO SUPPORT: ESP-IDF will not provide updates, bug fixes, or security patches timely.
+2. PLANNED REMOVAL: This driver WILL BE REMOVED in ESP-IDF v7.0 (next major release).
+3. ACTION REQUIRED: Migrate to 'driver/i2c_master.h' or 'driver/i2c_slave.h' immediately.
+   - If you are a library maintainer, please update your code.
+   - If you are using 3rd-party libraries, contact the authors for updates.
+
+4. SUPPRESS WARNING: Set Kconfig 'CONFIG_I2C_SUPPRESS_DEPRECATE_WARN=y' to silent
+   this warning. However, by doing so, YOU ASSUME ALL RISKS including potential
+   security vulnerabilities, system instability, and future incompatibility.
+
+For API reference of the new I2C driver, see: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/i2c.html
+For other items about migration, see: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/migration-guides/index.html
+==================================================================================
+   '
+   13 | #pragma message("\n" \
+      |         ^~~~~~~
+/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.c: In function 'gt9xxx_scan':
+/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.c:233:9: error: 't' undeclared (first use in this function)
+  233 |     if (t > 240)
+      |         ^
+/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.c:233:9: note: each undeclared identifier is reported only once for each function it appears in
+[2/11] Performing build step for 'bootloader'
+[1/1] cd /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader && /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.bin
+Bootloader binary size 0x59f0 bytes. 0x610 bytes (6%) free.
+[3/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/APP/lvgl_demo.c.obj
+In file included from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/gt9xxx.h:21,
+                 from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP/TOUCH/touch.h:17,
+                 from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/lvgl_demo.h:19,
+                 from /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/lvgl_demo.c:13:
+/opt/esp-idf/components/driver/i2c/include/driver/i2c.h:13:9: note: '#pragma message: 
+================================ CRITICAL WARNING ================================
+This legacy I2C driver (driver/i2c.h) is officially END-OF-LIFE (EOL) as of ESP-IDF v6.0.
+
+1. NO SUPPORT: ESP-IDF will not provide updates, bug fixes, or security patches timely.
+2. PLANNED REMOVAL: This driver WILL BE REMOVED in ESP-IDF v7.0 (next major release).
+3. ACTION REQUIRED: Migrate to 'driver/i2c_master.h' or 'driver/i2c_slave.h' immediately.
+   - If you are a library maintainer, please update your code.
+   - If you are using 3rd-party libraries, contact the authors for updates.
+
+4. SUPPRESS WARNING: Set Kconfig 'CONFIG_I2C_SUPPRESS_DEPRECATE_WARN=y' to silent
+   this warning. However, by doing so, YOU ASSUME ALL RISKS including potential
+   security vulnerabilities, system instability, and future incompatibility.
+
+For API reference of the new I2C driver, see: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/i2c.html
+For other items about migration, see: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/migration-guides/index.html
+==================================================================================
+   '
+   13 | #pragma message("\n" \
+      |         ^~~~~~~
+ninja: build stopped: subcommand failed.

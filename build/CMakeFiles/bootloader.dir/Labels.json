@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/CMakeFiles/bootloader"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/home/nekorain/Documents/IDF/LVGL/LVGL_MIPILCD/01_lvgl_official_transplant/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 
