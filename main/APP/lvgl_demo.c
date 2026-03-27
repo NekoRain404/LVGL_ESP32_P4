@@ -18,6 +18,7 @@
 #include "demos/lv_demos.h"
 #include "esp_lvgl_port.h"
 #include "esp_lvgl_port_disp.h"
+#include "ui.h"
 
 typedef struct {
     uint16_t x;
@@ -161,16 +162,16 @@ lv_display_t *lv_port_disp_init(void)
 #if LVGL_VERSION_MAJOR >= 9
                 .swap_bytes = false,
 #endif
-                .triple_buffer = false,
+                .triple_buffer = true,
                 .sw_rotate = false,
                 .full_refresh = false,
-                .direct_mode = true,
+                .direct_mode = false,
             }
         };
 
         const lvgl_port_display_dsi_cfg_t  dpi_cfg = {
             .flags = {
-                .avoid_tearing = true,
+                .avoid_tearing = false,
             }
         };
 
@@ -246,12 +247,7 @@ void lvgl_demo(void)
     /* 锁定互斥锁，因为LVGL API不是线程安全的 */
     if (lvgl_port_lock(0))
     {
-        /* 官方demo,需要在SDK Configuration中开启对应Demo */
-        // lv_demo_music();      
-        // lv_demo_benchmark();
-        lv_demo_widgets();
-        // lv_demo_stress();
-        // lv_demo_keypad_encoder();
+        ui_init();
 
         /* 释放互斥锁 */
         lvgl_port_unlock();  /* 释放互斥锁 */

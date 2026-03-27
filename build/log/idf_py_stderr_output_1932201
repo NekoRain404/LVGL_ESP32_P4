@@ -1,0 +1,67 @@
+Command: /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 100 --decode-panic backtrace /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.elf -m '/home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4002cdd0: [0;33minsert_free_block[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/stdlib/builtin/lv_tlsf.c[0m[0m:[1;31m627[0m
+[0m--- 0x4002cdb6: [0;33minsert_free_block[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/stdlib/builtin/lv_tlsf.c[0m[0m:[1;31m620[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40021794: [0;33mlv_draw_sw_mask_apply[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m104[0m
+[0m--- 0x40021790: [0;33mlv_draw_sw_mask_apply[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m103[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40020a24: [0;33mline_mask_steep[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m611[0m
+[0m--- 0x40020d06: [0;33mlv_draw_mask_line[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m436[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4001ac22: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1458[0m
+[0m--- 0x4001abfa: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1451[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40057c06: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m298[0m
+[0m--- 0x40057bc2: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m259[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4004d75e: [0;33mlv_draw_sw_blend[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend.c[0m[0m:[1;31m110[0m
+[0m--- 0x4004d758: [0;33mlv_draw_sw_blend[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend.c[0m[0m:[1;31m109[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4ff0a1ec: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m519[0m
+[0m--- 0x4ff089e4: [0;33mvPortExitCriticalSafe[0m[0m at [0;32m/opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos/portmacro.h[0m[0m:[1;31m665[0m
+[0m--- (inlined by) [0;33ms_c2m_ops[0m[0m at [0;32m/opt/esp-idf/components/esp_mm/esp_cache_msync.c[0m[0m:[1;31m68[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40057c06: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m298[0m
+[0m--- 0x40057bc2: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m259[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4001ac24: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1458[0m
+[0m--- 0x4001abfa: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1451[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4001ac22: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1458[0m
+[0m--- 0x4001abfa: [0;33mwait_for_flushing[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_refr.c[0m[0m:[1;31m1451[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40057c06: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m298[0m
+[0m--- 0x40057bc2: [0;33mlv_draw_sw_blend_color_to_rgb565[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m259[0m
+[0m--- 0x4006a7e8: [0;33msnprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/snprintf.c[0m[0m:[1;31m39[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40020768: [0;33mline_mask_flat[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m505[0m
+[0m--- 0x40020cfc: [0;33mlv_draw_mask_line[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_mask.c[0m[0m:[1;31m398[0m
+[0m--- 0x4006a7e8: [0;33m__flockfile[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/stdio_private.h[0m[0m:[1;31m238[0m
+[0m--- (inlined by) [0;33mfflush[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/fflush.c[0m[0m:[1;31m42[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4001ac24: [0;33mlv_obj_move_to_index[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_obj_tree.c[0m[0m:[1;31m240[0m
+[0m--- 0x4001abfa: [0;33mlv_obj_move_to_index[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/core/lv_obj_tree.c[0m[0m:[1;31m246[0m
+[0m--- 0x4006a7e8: [0;33m__flockfile[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/stdio_private.h[0m[0m:[1;31m238[0m
+[0m--- (inlined by) [0;33mfflush[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/fflush.c[0m[0m:[1;31m42[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40057c06: [0;33mrgb565_swapped_image_blend[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m1039[0m
+[0m--- 0x40057bc2: [0;33mrgb565_swapped_image_blend[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_rgb565.c[0m[0m:[1;31m1023[0m
+[0m--- 0x4006a7e8: [0;33m__flockfile[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/stdio_private.h[0m[0m:[1;31m238[0m
+[0m--- (inlined by) [0;33mfflush[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/riscv32-esp-elf/build/build-picolibc-build-x86_64-build_pc-linux-gnu/../../../src/picolibc-git-1738c754/newlib/libc/tinystdio/fflush.c[0m[0m:[1;31m42[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m

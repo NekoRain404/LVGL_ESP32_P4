@@ -1,0 +1,85 @@
+Command: /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 100 --decode-panic backtrace /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.elf -m '/home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ESP-ROM:esp32p4-eco2-20240710
+Build:Jul 10 2024
+rst:0x17 (CHIP_USB_UART_RESET),boot:0x31f (SPI_FAST_FLASH_BOOT)
+Core0 Saved PC:0x4ff2f1f0
+Core1 Saved PC:0x4fc058e0
+SPI mode:DIO, clock div:1
+load:0x4ff33ce0,len:0x15e0
+load:0x4ff29ed0,len:0xe18
+load:0x4ff2cbd0,len:0x359c
+entry 0x4ff29eda
+[0;32mI (28) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Mar 24 2026 20:23:08[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.3[0m
+[0;32mI (32) boot: efuse block revision: v0.3[0m
+[0;32mI (35) boot.esp32p4: SPI Speed      : 80MHz[0m
+[0;32mI (39) boot.esp32p4: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32p4: SPI Flash Size : 16MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (52) boot: Partition Table:[0m
+[0;32mI (54) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00400000[0m
+[0;32mI (81) boot: End of partition table[0m
+[0;32mI (83) esp_image: segment 0: paddr=00010020 vaddr=40080020 size=15ba4h ( 88996) map[0m
+[0;32mI (104) esp_image: segment 1: paddr=00025bcc vaddr=30100000 size=00068h (   104) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=00025c3c vaddr=4ff00000 size=0a3dch ( 41948) load[0m
+[0;32mI (116) esp_image: segment 3: paddr=00030020 vaddr=40000020 size=74840h (477248) map[0m
+[0;32mI (187) esp_image: segment 4: paddr=000a4868 vaddr=4ff0a3dc size=06c98h ( 27800) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=000ab508 vaddr=4ff11080 size=03b58h ( 15192) load[0m
+[0;32mI (201) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (202) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) hex_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (214) hex_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (215) hex_psram: DriveStr.    : 0x00 (25 Ohm)[0m
+[0;32mI (215) hex_psram: dev id       : 0x03 (generation 4)[0m
+[0;32mI (220) hex_psram: density      : 0x07 (256 Mbit)[0m
+[0;32mI (224) hex_psram: good-die     : 0x06 (Pass)[0m
+[0;32mI (228) hex_psram: SRF          : 0x02 (Slow Refresh)[0m
+[0;32mI (233) hex_psram: BurstType    : 0x00 ( Wrap)[0m
+[0;32mI (237) hex_psram: BurstLen     : 0x03 (2048 Byte)[0m
+[0;32mI (242) hex_psram: BitMode      : 0x01 (X16 Mode)[0m
+[0;32mI (246) hex_psram: Readlatency  : 0x04 (14 cycles@Fixed)[0m
+[0;32mI (251) hex_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (255) MSPI Timing: Enter psram timing tuning[0m
+[0;32mI (432) esp_psram: Found 32MB PSRAM device[0m
+[0;32mI (433) esp_psram: Speed: 200MHz[0m
+[0;32mI (436) hex_psram: psram CS IO is dedicated[0m
+[0;32mI (436) cpu_start: Multicore app[0m
+[0;32mI (1422) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1432) cpu_start: GPIO 38 and 37 are used as console UART I/O pins[0m
+[0;32mI (1432) cpu_start: Pro cpu start user code[0m
+[0;32mI (1433) cpu_start: cpu freq: 360000000 Hz[0m
+[0;32mI (1435) app_init: Application information:[0m
+[0;32mI (1438) app_init: Project name:     01_lvgl_official_transplant[0m
+[0;32mI (1444) app_init: App version:      6c4b520-dirty[0m
+[0;32mI (1449) app_init: Compile time:     Mar 24 2026 20:59:28[0m
+[0;32mI (1454) app_init: ELF file SHA256:  37c9f1266...[0m
+[0;32mI (1458) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (1463) efuse_init: Min chip rev:     v1.0[0m
+[0;32mI (1467) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (1471) efuse_init: Chip rev:         v1.3[0m
+[0;32mI (1475) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1481) heap_init: At 4FF26A80 len 00014540 (81 KiB): RETENT_RAM[0m
+[0;32mI (1487) heap_init: At 4FF3AFC0 len 00004BF0 (18 KiB): RAM[0m
+[0;32mI (1492) heap_init: At 4FF40000 len 00060000 (384 KiB): RAM[0m
+[0;32mI (1498) heap_init: At 50108080 len 00007F80 (31 KiB): RTCRAM[0m
+[0;32mI (1503) heap_init: At 30100068 len 00001F98 (7 KiB): TCM[0m
+[0;32mI (1509) esp_psram: Adding pool of 32768K of PSRAM memory to heap allocator[0m
+[0;32mI (1516) spi_flash: detected chip: generic[0m
+[0;32mI (1519) spi_flash: flash io: dio[0m
+[0;32mI (1522) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1528) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1535) main_task: Started on CPU0[0m
+[0;32mI (1545) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1545) main_task: Calling app_main()[0m
+[0;32mI (1555) LVGL: Starting LVGL task[0m
+[0;32mI (1555) mipi_lcd: MIPI DSI PHY Powered on[0m
+[0;32mI (1755) mipi_lcd: mipilcd_id:0x9881c10 [0m
+[0;32mI (3525) GT9XXX: CTP:9271[0m
+[0;32mI (3625) ui_adc: ui_init start[0m
+[0;32mI (3625) ui_adc: ui_init done, source=sim[0m
+[0;32mI (3625) main_task: Returned from app_main()[0m

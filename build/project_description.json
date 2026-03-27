@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "01_lvgl_official_transplant",
-    "project_version":    "fb3a825-dirty",
+    "project_version":    "6c4b520-dirty",
     "project_path":       "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4",
     "idf_path":           "/opt/esp-idf",
     "build_dir":          "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build",
@@ -35,7 +35,7 @@
             "dir": "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP",
             "type": "LIBRARY",
             "lib": "__idf_BSP",
-            "reqs": [ "driver", "esp_lcd", "esp_common" ],
+            "reqs": [ "driver", "esp_lcd", "esp_common", "esp_driver_ledc" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -1765,7 +1765,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "lvgl__lvgl" ],
             "file": "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/main.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/esp_lvgl_port.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/esp_lvgl_port_disp.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/lvgl_demo.c" ],
+            "sources": [ "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/main.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/adc_sampler.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/esp_lvgl_port.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/esp_lvgl_port_disp.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/lvgl_demo.c", "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/main/APP/ui.c" ],
             "include_dirs": [ ".", "APP" ]
         },
         "mbedtls": {
@@ -3871,7 +3871,7 @@
             "dir": "/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/components/BSP",
             "source": "project_components",
             "lib": "__idf_BSP",
-            "reqs": [ "driver", "esp_lcd", "esp_common" ],
+            "reqs": [ "driver", "esp_lcd", "esp_common", "esp_driver_ledc" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],

@@ -1,0 +1,67 @@
+Command: ninja all
+fatal: detected dubious ownership in repository at '/opt/esp-idf'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /opt/esp-idf
+info: Default value for LV_TXT_BREAK_CHARS in sdkconfig is " ,.;:-_" but it is " ,.;:-_)}" according to Kconfig.
+Using default value from sdkconfig (" ,.;:-_").
+info: Default value for LV_USE_SNAPSHOT in sdkconfig is y but it is n according to Kconfig.
+Using default value from sdkconfig (y).
+Configuration Report                                                            
+ ────────────────────────────────────────────────────────────────────────────── 
+   Parser Version: 1                                                            
+   Verbosity: default                                                           
+   Defaults policy: sdkconfig                                                   
+   Status: Finished with notifications                                          
+                                                                                
+  Default Value Mismatch                                                        
+   ──────────────────────────────────────────────────────────────────────────   
+    Using sdkconfig default values                                              
+    Config symbols with different default value between sdkconfig and           
+    Kconfig                                                                     
+    LV_USE_SNAPSHOT: Kconfig default value: n, sdkconfig default value: y       
+    LV_TXT_BREAK_CHARS: Kconfig default value:  ,.;:-_)}, sdkconfig             
+    default value:  ,.;:-_                                                      
+   ──────────────────────────────────────────────────────────────────────────   
+  Disabled Symbols/Choices With User-Set Value                                  
+   ──────────────────────────────────────────────────────────────────────────   
+    * ESPTOOLPY_FLASHFREQ_VAL (defined at                                       
+    /opt/esp-idf/components/esptool_py/../spi_flash/esp32p4/Kconfig.flash_f…    
+    with user-set value 80 from /tmp/kconfgen_tmpc08lr9bk                       
+    * ESPTOOLPY_FLASHFREQ (defined at                                           
+    /opt/esp-idf/components/esptool_py/Kconfig.projbuild:93) with user-set      
+    value 80m from /tmp/kconfgen_tmpc08lr9bk                                    
+    * ESPTOOLPY_FLASHSIZE (defined at                                           
+    /opt/esp-idf/components/esptool_py/Kconfig.projbuild:136) with user-set     
+    value 16MB from /tmp/kconfgen_tmpc08lr9bk                                   
+    * PARTITION_TABLE_FILENAME (defined at                                      
+    /opt/esp-idf/components/partition_table/Kconfig.projbuild:137) with         
+    user-set value partitions-16MiB.csv from /tmp/kconfgen_tmpc08lr9bk          
+    * ESP32P4_REV_MIN_FULL (defined at                                          
+    /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
+    with user-set value 100 from /tmp/kconfgen_tmpc08lr9bk                      
+    * ESP_REV_MIN_FULL (defined at                                              
+    /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
+    with user-set value 100 from /tmp/kconfgen_tmpc08lr9bk                      
+    * ESP32P4_REV_MAX_FULL (defined at                                          
+    /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
+    with user-set value 199 from /tmp/kconfgen_tmpc08lr9bk                      
+    * ESP_REV_MAX_FULL (defined at                                              
+    /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
+    with user-set value 199 from /tmp/kconfgen_tmpc08lr9bk                      
+    * ESP_EFUSE_BLOCK_REV_MAX_FULL (defined at                                  
+    /opt/esp-idf/components/esp_hw_support/./port/esp32p4/Kconfig.hw_suppor…    
+    with user-set value 199 from /tmp/kconfgen_tmpc08lr9bk                      
+    * ESP_DEFAULT_CPU_FREQ_MHZ (defined at                                      
+    /opt/esp-idf/components/esp_system/./port/soc/esp32p4/Kconfig.cpu:19)       
+    with user-set value 360 from /tmp/kconfgen_tmpc08lr9bk                      
+   ──────────────────────────────────────────────────────────────────────────   
+ ────────────────────────────────────────────────────────────────────────────── 
+fatal: detected dubious ownership in repository at '/opt/esp-idf'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /opt/esp-idf
+fatal: detected dubious ownership in repository at '/opt/esp-idf/components/openthread/openthread'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /opt/esp-idf/components/openthread/openthread

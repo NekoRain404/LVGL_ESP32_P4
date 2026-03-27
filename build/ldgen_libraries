@@ -211,3 +211,4 @@
 /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/BSP/libBSP.a
 /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/driver/libdriver.a
 /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/esp_lcd/libesp_lcd.a
+/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a

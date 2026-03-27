@@ -1,0 +1,140 @@
+Command: /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 100 --decode-panic backtrace /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.elf -m '/home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40036aba: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m159[0m
+[0m--- 0x40036ab4: [0;33mlv_chart_set_point_count[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/widgets/chart/lv_chart.c[0m[0m:[1;31m155[0m
+[0m--- 0x4ff2a970: [0;33mesp_cpu_configure_region_protection_rev_less_than_v3[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m260[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m422[0m
+[0m--- 0x4ff2aa70: [0;33mrtc_clk_init[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/rtc_clk_init.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff2a8d0: [0;33mesp_cpu_configure_invalid_regions[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m81[0m
+[0m--- (inlined by) [0;33mesp_cpu_configure_region_protection[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/port/esp32p4/cpu_region_protect.c[0m[0m:[1;31m413[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x4ff054d2: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m57[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m

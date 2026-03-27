@@ -17,6 +17,7 @@
 #include "mipi_lcd.h"
 #include <math.h>
 #include <string.h>
+#include <stdint.h>
 
 /* 定义背光和复位IO */
 #define LCD_BL_PIN       (GPIO_NUM_23)
@@ -79,6 +80,7 @@ extern _lcd_dev lcddev; /* 管理LCD重要参数 */
 
 /* 函数声明 */
 void lcd_init(void);                                                                            /* lcd初始化函数 */
+void lcd_set_backlight(uint8_t percent);                                                        /* 背光亮度百分比(0-100) */
 void lcd_clear(uint16_t color);                                                                 /* 清屏函数 */
 void lcd_draw_point(uint16_t x, uint16_t y, uint16_t color);                                    /* 画点函数 */
 void lcd_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t color);              /* 填充函数 */

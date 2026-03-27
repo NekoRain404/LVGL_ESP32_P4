@@ -13,6 +13,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_heap_caps.h"
+#include "driver/ledc.h"
 #include "lcd.h"
 #include "lcdfont.h"
 
@@ -22,6 +23,42 @@ DRAM_ATTR uint8_t buffer_sw = 0;            /* 当前使用的缓冲区索引 */
 DRAM_ATTR uint8_t refresh_done_flag = 0;    /* 缓存切换索引 */
 DRAM_ATTR _lcd_dev lcddev;                  /* 管理LCD重要参数 */
 uint32_t g_back_color  = 0xFFFF;            /* 背景色 */
+static bool s_bl_pwm_inited = false;
+
+#define LCD_BL_LEDC_MODE        LEDC_LOW_SPEED_MODE
+#define LCD_BL_LEDC_TIMER       LEDC_TIMER_0
+#define LCD_BL_LEDC_CHANNEL     LEDC_CHANNEL_0
+#define LCD_BL_LEDC_RESOLUTION  LEDC_TIMER_13_BIT
+#define LCD_BL_LEDC_FREQ_HZ     5000
+#define LCD_BL_ACTIVE_LOW       0
+
+void lcd_set_backlight(uint8_t percent)
+{
+    uint32_t duty_max = (1U << LCD_BL_LEDC_RESOLUTION) - 1U;
+    uint32_t mapped;
+    uint32_t duty;
+
+    if (!s_bl_pwm_inited) {
+        return;
+    }
+
+    if (percent > 100U) {
+        percent = 100U;
+    }
+
+    /* 最低亮度保护：限制在 60%~100%，避免屏幕过暗 */
+    if (percent < 60U) {
+        percent = 60U;
+    }
+
+    mapped = 60U + ((uint32_t)(percent - 60U) * 40U) / 40U; /* 60%~100% */
+    duty = (duty_max * mapped) / 100U;
+#if LCD_BL_ACTIVE_LOW
+    duty = duty_max - duty;
+#endif
+    ESP_ERROR_CHECK(ledc_set_duty(LCD_BL_LEDC_MODE, LCD_BL_LEDC_CHANNEL, duty));
+    ESP_ERROR_CHECK(ledc_update_duty(LCD_BL_LEDC_MODE, LCD_BL_LEDC_CHANNEL));
+}
 
 /**
  * @brief       内部缓存刷新完成回调函数
@@ -46,15 +83,26 @@ void lcd_init(void)
     lcddev.ctrl.lcd_rst = LCD_RST_PIN;                          /* 复位管脚 */
     lcddev.ctrl.lcd_bl = LCD_BL_PIN;                            /* 背光管脚 */
 
-    gpio_config_t gpio_init_struct = {0};
-    gpio_init_struct.intr_type    = GPIO_INTR_DISABLE;          /* 失能引脚中断 */
-    gpio_init_struct.mode         = GPIO_MODE_OUTPUT;           /* 输出模式 */
-    gpio_init_struct.pull_up_en   = GPIO_PULLUP_DISABLE;        /* 失能上拉 */
-    gpio_init_struct.pull_down_en = GPIO_PULLDOWN_DISABLE;      /* 失能下拉 */
-    gpio_init_struct.pin_bit_mask = 1ull << lcddev.ctrl.lcd_bl; /* 设置的引脚的位掩码 */
-    ESP_ERROR_CHECK(gpio_config(&gpio_init_struct));            /* 配置GPIO */
-
-    LCD_BL(0);      /* 背光关闭 */
+    ledc_timer_config_t ledc_timer = {
+        .speed_mode = LCD_BL_LEDC_MODE,
+        .duty_resolution = LCD_BL_LEDC_RESOLUTION,
+        .timer_num = LCD_BL_LEDC_TIMER,
+        .freq_hz = LCD_BL_LEDC_FREQ_HZ,
+        .clk_cfg = LEDC_AUTO_CLK,
+    };
+    ledc_channel_config_t ledc_channel = {
+        .gpio_num = lcddev.ctrl.lcd_bl,
+        .speed_mode = LCD_BL_LEDC_MODE,
+        .channel = LCD_BL_LEDC_CHANNEL,
+        .intr_type = LEDC_INTR_DISABLE,
+        .timer_sel = LCD_BL_LEDC_TIMER,
+        .duty = 0,
+        .hpoint = 0,
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
+    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
+    s_bl_pwm_inited = true;
+    lcd_set_backlight(0);
 
     lcddev.lcd_panel_handle = mipi_lcd_init();                  /* 初始化MIPI LCD */
     ESP_ERROR_CHECK(esp_lcd_dpi_panel_get_frame_buffer(lcddev.lcd_panel_handle, 2, &lcd_buffer[0], &lcd_buffer[1])); /* 获取帧缓冲区 */
@@ -66,7 +114,7 @@ void lcd_init(void)
     /* 注册回调函数 */
     esp_lcd_dpi_panel_register_event_callbacks(lcddev.lcd_panel_handle, &mipi_cbs, NULL);
     lcd_clear(WHITE);
-    LCD_BL(1);      /* 打开背光 */
+    lcd_set_backlight(100);      /* 打开背光 */
 }
 
 /**

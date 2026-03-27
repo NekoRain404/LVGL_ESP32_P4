@@ -1,0 +1,14 @@
+Command: ninja flash
+
+A fatal error occurred: Could not open /dev/ttyACM0, the port is busy or doesn't exist.
+([Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0')
+
+Hint: Try to add user into dialout or uucp group.
+
+CMake Error at /opt/esp-idf/components/esptool_py/run_serial_tool.cmake:67 (message):
+  
+  /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python;-m;esptool;--chip;esp32p4
+  failed.
+
+
+

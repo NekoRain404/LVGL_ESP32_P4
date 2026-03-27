@@ -1,0 +1,485 @@
+Command: /home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python /opt/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32p4 --revision 100 --decode-panic backtrace /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/bootloader/bootloader.elf -m '/home/nekorain/.espressif/python_env/idf6.0_py3.14_env/bin/python' '/opt/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4ff2f416: [0;33mmmu_ll_unmap_all[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/mmu_ll.h[0m[0m:[1;31m369[0m
+[0m--- (inlined by) [0;33mmmu_hal_unmap_all[0m[0m at [0;32m/opt/esp-idf/components/hal/mmu_hal.c[0m[0m:[1;31m43[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m284[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m290[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m231[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+riscv32-esp-elf-addr2line: /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf: file format not recognized
+[1;31mriscv32-esp-elf-addr2line -fiaC -e /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf 0x40048f0e: Command '['riscv32-esp-elf-addr2line', '-fiaC', '-e', '/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf', '0x40048f0e']' returned non-zero exit status 1.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+riscv32-esp-elf-addr2line: /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf: file format not recognized
+[1;31mriscv32-esp-elf-addr2line -fiaC -e /home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf 0x40048f1a 0x40049490: Command '['riscv32-esp-elf-addr2line', '-fiaC', '-e', '/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/build/01_lvgl_official_transplant.elf', '0x40048f1a', '0x40049490']' returned non-zero exit status 1.[0m
+[1;31mELF file is missing or has changed, the build folder was probably modified.[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x40048f0e: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m314[0m
+[0m--- 0x4ff2a270: [0;33mbootloader_spi_flash_resume[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m224[0m
+[0m--- (inlined by) [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m237[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x40048f1a: [0;33mget_glyph_dsc_id[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m319[0m
+[0m--- 0x40049490: [0;33mlv_font_get_glyph_dsc_fmt_txt[0m[0m at [0;32m/home/nekorain/Documents/GIT_WORK/NekoRain/LVGL_ESP32_P4/managed_components/lvgl__lvgl/src/font/fmt_txt/lv_font_fmt_txt.c[0m[0m:[1;31m257[0m
+[0m--- 0x4ff2a240: [0;33mbootloader_init_spi_flash[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32p4.c[0m[0m:[1;31m228[0m
+[0m--- 0x4ff00003: [0;33m_vector_table[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is ec53cb44f80af9306149da48fd306ea977e5f5ae5231bfc0f3b55db8275f1508[0m
+[0m--- 0x4ff0538a: [0;33mcpu_utility_ll_reset_cpu[0m[0m at [0;32m/opt/esp-idf/components/hal/esp32p4/include/hal/cpu_utility_ll.h[0m[0m:[1;31m25[0m
+[0m--- (inlined by) [0;33mesp_cpu_reset[0m[0m at [0;32m/opt/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m49[0m
+[0m--- 0x40002482: [0;33mpanic_handler[0m[0m at [0;32m/opt/esp-idf/components/esp_system/port/panic_handler.c[0m[0m:[1;31m188[0m
+[0m--- 0x4ff29ed0: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/opt/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x4ff2cbd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32m/opt/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m93[0m
+[0m--- 0x4ff29eda: [0;33mcall_start_cpu0[0m[0m at [0;32m/opt/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m
